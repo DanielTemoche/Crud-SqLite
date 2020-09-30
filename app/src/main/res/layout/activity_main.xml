@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="5dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +27,16 @@
             android:typeface="serif" />
 
         <EditText
+            android:id="@+id/idID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:ems="10"
+            android:hint="id"
+            android:inputType="textPersonName" />
+
+        <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +44,8 @@
             android:layout_marginRight="25dp"
             android:ems="10"
             android:hint="Name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textAlignment="textStart" />
 
         <EditText
             android:id="@+id/correo"
@@ -44,35 +55,63 @@
             android:layout_marginRight="25dp"
             android:ems="10"
             android:hint="Correro"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textAlignment="textStart" />
 
         <EditText
             android:id="@+id/fecha"
-            android:layout_width="match_parent"
+            android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="15dp"
             android:ems="10"
             android:hint="Fecha"
-            android:inputType="time" />
+            android:inputType="date"
+            android:textAlignment="textStart" />
 
-        <Button
-            android:id="@+id/boton"
-            android:layout_width="154dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="115dp"
-            android:layout_marginRight="45dp"
-            android:background="@drawable/btn"
-            android:backgroundTint="#00BCD4"
-            android:text="Insertar" />
+        <LinearLayout
+            android:layout_width="355dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn"
+                android:backgroundTint="#00BCD4"
+                android:text="Insertar"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/Editar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn"
+                android:backgroundTint="#FFFFFF"
+                android:text="Editar" />
+
+            <Button
+                android:id="@+id/eliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn"
+                android:backgroundTint="#FFFFFF"
+                android:text="Eliminar" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="399dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,34 +127,18 @@
                 android:id="@+id/btnlistar"
                 android:layout_width="131dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="125dp"
                 android:background="@drawable/btn"
                 android:backgroundTint="#009688"
                 android:text="Listar" />
 
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn"
-                android:backgroundTint="#FFFFFF"
-                android:text="Editar" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn"
-                android:backgroundTint="#FFFFFF"
-                android:text="Eliminar" />
         </LinearLayout>
 
     </LinearLayout>
 
     <ScrollView
-        android:layout_width="348dp"
-        android:layout_height="232dp"
+        android:layout_width="407dp"
+        android:layout_height="312dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -124,8 +147,7 @@
             android:id="@+id/lista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:textAlignment="textStart"
+            android:textAlignment="center"
             android:textSize="18sp" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

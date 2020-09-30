@@ -26,6 +26,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME );
     }
+    //Insert
     public boolean insertData(String nombre,String correo,String fecha){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -41,10 +42,32 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+    //Get All
     public Cursor getAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("Select * from " + TABLE_NAME, null);
         return res;
+    }
+    //Update
+
+    public boolean updateData(String id,String nombre,String correo,String fecha){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2,nombre);
+        contentValues.put(COL_3,correo);
+        contentValues.put(COL_4,fecha);
+        int result =db.update(TABLE_NAME,contentValues,"ID =?",new String[]{id});
+        if(result>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //delete
+    public Integer deleteData(String id){
+       SQLiteDatabase db = this.getWritableDatabase();
+       int i = db.delete(TABLE_NAME,"ID=?",new String[]{id});
+       return i;
     }
 }
 
